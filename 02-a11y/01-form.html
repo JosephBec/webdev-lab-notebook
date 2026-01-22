@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,23 +6,36 @@
     <title>01 - Form</title>
     <link rel="stylesheet" href="../_styles/styles.css" />
   </head>
+  <!-- I ran this with Wave first, I then fixed all those errors. By the time I got to testing it with Lighthouse, using Live Server It gave me 100/100 -->
   <body>
-    <h1>01 - Form</h1>
-    <form action="/submit">
-      <span>Name</span>
-      <input type="text" />
-      <br /><br />
-      <label>
-        Email
-        <input type="text" />
-      </label>
-      <br /><br />
-      <span>Favorite Character</span>
-      <div><input type="radio" id="spongebob" />Spongebob</div>
-      <div><input type="radio" id="patrick" />Patrick</div>
-      <div><input type="radio" id="sandy" />Sandy</div>
-      <br />
-      <button>Submit</button>
-    </form>
+    <!-- I needed to add this in order to get rid of all the "Alerts" with Wave -->
+    <header>
+      <h1>01 - Form</h1>
+    </header>
+    <!-- Same with this, I needed to add this in order to get rid of all the "Alerts" with Wave -->
+    <main>
+      <form action="/submit">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+        <br /><br />
+        <!-- This is now explicitly labeled -->
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+        <br /><br />
+        <fieldset>
+          <legend>Favorit Chacter</legend>
+          <input type="radio" id="spongebob" name="character" />
+          <label for="spongebob">Spongebob</label>
+          <br />
+          <input type="radio" id="patrick" name="character" />
+          <label for="patrick">Patrick</label>
+          <br />
+          <input type="radio" id="sandy" name="character" />
+          <label for="sandy">Sandy</label>
+        </fieldset>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
   </body>
 </html>

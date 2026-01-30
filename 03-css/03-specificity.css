@@ -1,25 +1,38 @@
 /* Specificity Exercise */
 
+/* Selector Specificity: (0, 1, 2) */
+/* 0 IDs, 1 class ".list-item", 2 elements "nav" and "a" */
 nav .list-item > a {
   color: var(--purple);
 }
 
+/* Selector Specificity: (1, 0, 1) */
+/* 1 ID "#main", 0 classes, 1 pseudo-element "::first-letter" */
 #main::first-letter {
   color: var(--purple);
 }
 
+/* Selector Specificity: (0, 1, 1) */
+/* 0 IDs, 1 attribute selector "[type]", 1 element "input" */
 input[type] {
   color: var(--purple);
 }
 
+/* Selector Specificity: (0, 1, 2) */
+/* 0 IDs, 1 class ".main", 2 elements "section" + 1 pseudo-element "::first-line" */
 section .main::first-line {
   color: var(--purple);
 }
 
-nav ul.menu li#first a:not([class='visited']) {
+/* Selector Specificity: (1, 2, 4) */
+/* 1 ID "#first", 2 classes ".menu" + 1 attribute selector inside ":not([class="visited"])", 4 elements "nav", "ul", "li", "a" */
+/* Note: :not() itself has 0 specificity, but its argument ([class="visited"]) counts as 1 attribute selector */
+nav ul.menu li#first a:not([class="visited"]) {
   color: var(--purple);
 }
 
+/* Selector Specificity: (0, 0, 10) */
+/* 0 IDs, 0 classes, 10 elements "div", "ol", "li", "ul", "li", "ol", "li", "ul", "li", "a" */
 div ol li ul li ol li ul li a {
   color: var(--purple);
 }

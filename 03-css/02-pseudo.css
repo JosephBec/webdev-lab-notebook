@@ -2,3 +2,12 @@
   width: 600px;
   margin: 40px auto;
 }
+
+p::first-letter {
+  font-size: 3em;
+}
+
+/* I'm not sure that this addition was specified in the md file but you did demonstrate this in the video.  */
+p:hover {
+  background-color: lightskyblue;
+}

@@ -9,7 +9,7 @@ const formatItems = (input) => {
     results.push(item.toFixed(3));
   }
 
-  return results.join(', ');
+  return results.join(", ");
 };
 
 console.log(formatItems([1, 4, 17, 26, 41]));

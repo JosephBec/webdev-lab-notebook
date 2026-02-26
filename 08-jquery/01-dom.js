@@ -1,3 +1,4 @@
+/*
 // Exercise #1:
 // When the user clicks the 'copy' button, copy the user input to the output area
 
@@ -46,3 +47,18 @@ function handleInput(event) {
   console.log('click event', event);
   output2.textContent = userInput2.value;
 }
+*/
+
+// Part 1 Copy on Click
+$("document").ready(() => {
+  $("#copy").on("click", () => {
+    $("#output1").text($("#userInput1").val());
+  });
+});
+
+// Part 2 Copy on Input
+$("document").ready(() => {
+  $("#userInput2").on("input", () => {
+    $("#output2").text($("#userInput2").val());
+  });
+});
